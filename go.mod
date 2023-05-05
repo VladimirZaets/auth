@@ -1,4 +1,4 @@
-module github.com/go-pkgz/auth
+module github.com/VladimirZaets/auth
 
 go 1.18
 
