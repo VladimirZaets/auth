@@ -42,7 +42,7 @@ func NewGoogle(p Params) Oauth2Handler {
 
 			if p.OnFinishCb != nil {
 				if err := p.OnFinishCb(&userInfo); err != nil {
-					p.L.Error("failed to call OnFinishCb", err)
+					fmt.Println("failed to call OnFinishCb", err)
 				}
 			}
 			return userInfo
@@ -71,8 +71,8 @@ func NewGithub(p Params) Oauth2Handler {
 				userInfo.SetStrAttr(v, data.Value(k))
 			}
 			if p.OnFinishCb != nil {
-				if err := p.OnFinishCb(userInfo); err != nil {
-					p.L.Error("failed to call OnFinishCb", err)
+				if err := p.OnFinishCb(&userInfo); err != nil {
+					fmt.Println("failed to call OnFinishCb", err)
 				}
 			}
 			return userInfo
@@ -116,8 +116,8 @@ func NewFacebook(p Params) Oauth2Handler {
 				userInfo.SetStrAttr(v, data.Value(k))
 			}
 			if p.OnFinishCb != nil {
-				if err := p.OnFinishCb(userInfo); err != nil {
-					p.L.Error("failed to call OnFinishCb", err)
+				if err := p.OnFinishCb(&userInfo); err != nil {
+					fmt.Println("failed to call OnFinishCb", err)
 				}
 			}
 			return userInfo
@@ -152,8 +152,8 @@ func NewYandex(p Params) Oauth2Handler {
 				userInfo.SetStrAttr(v, data.Value(k))
 			}
 			if p.OnFinishCb != nil {
-				if err := p.OnFinishCb(userInfo); err != nil {
-					p.L.Error("failed to call OnFinishCb", err)
+				if err := p.OnFinishCb(&userInfo); err != nil {
+					fmt.Println("failed to call OnFinishCb", err)
 				}
 			}
 			return userInfo
@@ -182,8 +182,8 @@ func NewTwitter(p Params) Oauth1Handler {
 				userInfo.SetStrAttr(v, data.Value(k))
 			}
 			if p.OnFinishCb != nil {
-				if err := p.OnFinishCb(userInfo); err != nil {
-					p.L.Error("failed to call OnFinishCb", err)
+				if err := p.OnFinishCb(&userInfo); err != nil {
+					fmt.Println("failed to call OnFinishCb", err)
 				}
 			}
 			return userInfo
@@ -211,8 +211,8 @@ func NewBattlenet(p Params) Oauth2Handler {
 				userInfo.SetStrAttr(v, data.Value(k))
 			}
 			if p.OnFinishCb != nil {
-				if err := p.OnFinishCb(userInfo); err != nil {
-					p.L.Error("failed to call OnFinishCb", err)
+				if err := p.OnFinishCb(&userInfo); err != nil {
+					fmt.Println("failed to call OnFinishCb", err)
 				}
 			}
 			return userInfo
@@ -239,8 +239,8 @@ func NewMicrosoft(p Params) Oauth2Handler {
 				userInfo.SetStrAttr(v, data.Value(k))
 			}
 			if p.OnFinishCb != nil {
-				if err := p.OnFinishCb(userInfo); err != nil {
-					p.L.Error("failed to call OnFinishCb", err)
+				if err := p.OnFinishCb(&userInfo); err != nil {
+					fmt.Println("failed to call OnFinishCb", err)
 				}
 			}
 			return userInfo
@@ -297,8 +297,8 @@ func NewPatreon(p Params) Oauth2Handler {
 				userInfo.SetStrAttr(v, data.Value(k))
 			}
 			if p.OnFinishCb != nil {
-				if err := p.OnFinishCb(userInfo); err != nil {
-					p.L.Error("failed to call OnFinishCb", err)
+				if err := p.OnFinishCb(&userInfo); err != nil {
+					fmt.Println("failed to call OnFinishCb", err)
 				}
 			}
 			return userInfo
