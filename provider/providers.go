@@ -41,7 +41,7 @@ func NewGoogle(p Params) Oauth2Handler {
 			}
 
 			if p.OnFinishCb != nil {
-				if err := p.OnFinishCb(userInfo); err != nil {
+				if err := p.OnFinishCb(&userInfo); err != nil {
 					p.L.Error("failed to call OnFinishCb", err)
 				}
 			}

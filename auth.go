@@ -236,7 +236,7 @@ func (s *Service) GetProviderParams(cid, csecret string) provider.Params {
 	return p
 }
 
-func (s *Service) AddProviderWithParams(name, p provider.Params) {
+func (s *Service) AddProviderWithParams(name string, p provider.Params) {
 	s.addProvider(name, p)
 }
 
