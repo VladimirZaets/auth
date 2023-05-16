@@ -41,6 +41,7 @@ type Params struct {
 	Issuer         string
 	AvatarSaver    AvatarSaver
 	UserAttributes UserAttributes
+	OnFinishCb     func(token.User) error // optional callback to call after successful login
 
 	Port int    // relevant for providers supporting port customization, for example dev oauth2
 	Host string // relevant for providers supporting host customization, for example dev oauth2

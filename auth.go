@@ -222,17 +222,21 @@ func (s *Service) Middleware() middleware.Authenticator {
 	return s.authMiddleware
 }
 
-func (s *Service) AddProviderWithUserAttributes(name, cid, csecret string, userAttributes provider.UserAttributes) {
+func (s *Service) GetProviderParams(cid, csecret string) provider.Params {
 	p := provider.Params{
-		URL:            s.opts.URL,
-		JwtService:     s.jwtService,
-		Issuer:         s.issuer,
-		AvatarSaver:    s.avatarProxy,
-		Cid:            cid,
-		Csecret:        csecret,
-		L:              s.logger,
-		UserAttributes: userAttributes,
+		URL:         s.opts.URL,
+		JwtService:  s.jwtService,
+		Issuer:      s.issuer,
+		AvatarSaver: s.avatarProxy,
+		Cid:         cid,
+		Csecret:     csecret,
+		L:           s.logger,
 	}
+
+	return p
+}
+
+func (s *Service) AddProviderWithParams(name, p provider.Params) {
 	s.addProvider(name, p)
 }
 
